@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: emissions
+    tables:
+      - name: clean_emissions
+        external:
+          location: 's3a://sample-bucket/staging/clean_emissions/'
+          format: parquet
