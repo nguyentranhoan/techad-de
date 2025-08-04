@@ -1,0 +1,16 @@
+name: 'ryan_dbt'
+version: '1.0'
+config-version: 2
+
+profile: 'spark_ryan'
+
+model-paths: ['models']
+target-path: 'target'
+clean-targets: ['target']
+
+models:
+  ryan_dbt:
+    staging:
+      materialized: view
+    marts:
+      materialized: table
