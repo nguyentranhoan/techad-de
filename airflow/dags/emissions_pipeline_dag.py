@@ -16,7 +16,7 @@ default_args = {
 
 
 dag = DAG(
-    dag_id='peer39_emissions_pipeline',
+    dag_id='emissions_pipeline',
     default_args=default_args,
     description='Full emissions pipeline using PySpark and MinIO',
     schedule_interval=None,
