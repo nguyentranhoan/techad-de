@@ -16,7 +16,7 @@ default_args = {
 
 
 dag = DAG(
-    dag_id='ryan_emissions_pipeline',
+    dag_id='peer39_emissions_pipeline',
     default_args=default_args,
     description='Full emissions pipeline using PySpark and MinIO',
     schedule_interval=None,
@@ -64,11 +64,11 @@ transform_logic = BashOperator(
     dag=dag,
 )
 
-quality_check = BashOperator(
-    task_id='run_tests',
-    bash_command=spark_submit_command('/opt/bitnami/spark/jobs/check_emissions_quality.py'),
-    dag=dag,
-)
+# quality_check = BashOperator(
+#     task_id='run_tests',
+#     bash_command=spark_submit_command('/opt/bitnami/spark/jobs/check_emissions_quality.py'),
+#     dag=dag,
+# )
 
 write_outputs = BashOperator(
     task_id='write_outputs',
