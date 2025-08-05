@@ -27,6 +27,7 @@ This will remove all containers, images, volumes, and networks related to this p
 - **Note:** This is safe to run multiple times and will not affect other Docker projects on your system.
 
 ### 3. **Create and start the stack**
+docker build -t custom-airflow:2.10.5 -f Dockerfile.airflow .
 This will build and launch all services:
 ```sh
 ./create-stack.sh
